@@ -1,0 +1,39 @@
+// .vscode/tasks.json
+
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",               // Nome da tarefa
+            "type": "shell",                // Tipo de tarefa shell
+            "command": "g++",               // Comando do compilador
+            "args": [
+                "-g",                      // Adiciona informações de depuração
+                "src/lexico.cpp",         // Arquivo cpp a ser compilado
+                "src/buffer.cpp",
+                "src/token.cpp",
+                "src/compilador.cpp",     // Arquivo Fonte
+                "-o",
+                "bin/compilador",          // Nome e localização do executável de saída
+                "-I",
+                "${workspaceFolder}/include",     //
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"  // Diretório de trabalho
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "dedicated"
+            },
+            "problemMatcher": [
+                "$gcc"                      // Define o tipo de problema a ser correspondido (saída do GCC)
+            ]
+        }
+    ]
+}
