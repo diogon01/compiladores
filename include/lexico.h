@@ -16,17 +16,18 @@ public:
 
 private:
     // Métodos internos para análise léxica
-    Token processIdentificador();      // Processa identificadores
-    Token processNumero();             // Processa números
-    Token processOperador();           // Processa operadores
-    Token processPalavraChave();       // Processa palavras-chave
+    Token processaIdentificador();      // Processa identificadores
+    Token processaNumero();             // Processa números
+    Token processaOperador();           // Processa operadores
+    Token processaOperador(char atualChar); 
+    Token processaPalavraChave();       // Processa palavras-chave
 
     // Outros métodos auxiliares, se necessário
 
     // Atributos
     Buffer& buffer;                     // Referência ao buffer de entrada
-    int currentLine;                    // Número da linha atual
-    int currentColumn;                  // Número da coluna atual
+    int atualLinha;                    // Número da linha atual
+    int atualColuna;                  // Número da coluna atual
 };
 
 #endif // LEXICO_H

@@ -1,5 +1,3 @@
-// .vscode/tasks.json
-
 {
     "version": "2.0.0",
     "tasks": [
@@ -9,14 +7,14 @@
             "command": "g++",               // Comando do compilador
             "args": [
                 "-g",                      // Adiciona informações de depuração
+                "src/compilador.cpp",     // Arquivo Fonte
                 "src/lexico.cpp",         // Arquivo cpp a ser compilado
                 "src/buffer.cpp",
                 "src/token.cpp",
-                "src/compilador.cpp",     // Arquivo Fonte
                 "-o",
                 "bin/compilador",          // Nome e localização do executável de saída
                 "-I",
-                "${workspaceFolder}/include",     //
+                "${workspaceFolder}/include",     // Diretório de inclusão
             ],
             "group": {
                 "kind": "build",
